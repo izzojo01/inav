@@ -7,7 +7,7 @@
 #
 ###############################################################
 
-GCC_REQUIRED_VERSION ?= 9.2.1
+GCC_REQUIRED_VERSION ?= 9.3.1
 ARM_SDK_DIR ?= $(TOOLS_DIR)/gcc-arm-none-eabi-9-2019-q4-major
 ARM_SDK_URL_BASE  := https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major
 
