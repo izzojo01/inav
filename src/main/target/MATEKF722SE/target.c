@@ -30,11 +30,18 @@ BUSDEV_REGISTER_SPI_TAG(busdev_mpu6000,     DEVHW_MPU6000,      MPU6000_SPI_BUS,
 BUSDEV_REGISTER_SPI_TAG(busdev_mpu6500,     DEVHW_MPU6500,      MPU6500_SPI_BUS,    MPU6500_CS_PIN,     MPU6500_EXTI_PIN,       1,  DEVFLAGS_NONE,  IMU_MPU6500_ALIGN);
 
 const timerHardware_t timerHardware[] = {
-    DEF_TIM(TIM3, CH1, PB4,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S1   UP1-2   D(1, 4, 5)
-    DEF_TIM(TIM3, CH2, PB5,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S2   UP1-2   D(1, 5, 5)
-    DEF_TIM(TIM3, CH3, PB0,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S3   UP1-2   D(1, 7, 5)
-    DEF_TIM(TIM3, CH4, PB1,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S4   UP1-2   D(1, 2, 5)
+    // (jvi) Attempting to remap motors by changing the order of lines in the structure below.
+    //  The lines commented out are the original code.
+    //DEF_TIM(TIM3, CH1, PB4,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S1   UP1-2   D(1, 4, 5)
+    //DEF_TIM(TIM3, CH2, PB5,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S2   UP1-2   D(1, 5, 5)
+    //DEF_TIM(TIM3, CH3, PB0,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S3   UP1-2   D(1, 7, 5)
+    //DEF_TIM(TIM3, CH4, PB1,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S4   UP1-2   D(1, 2, 5)
 
+    DEF_TIM(TIM3, CH4, PB1,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S4   UP1-2   D(1, 2, 5)
+    DEF_TIM(TIM3, CH3, PB0,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S3   UP1-2   D(1, 7, 5)
+    DEF_TIM(TIM3, CH2, PB5,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S2   UP1-2   D(1, 5, 5)
+    DEF_TIM(TIM3, CH1, PB4,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S1   UP1-2   D(1, 4, 5)
+    
     DEF_TIM(TIM2, CH1, PA15,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S5   UP1-7   D(1, 5, 3) - clash with S2
     DEF_TIM(TIM2, CH2, PB3,   TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0, 0),   // S6   UP1-7   D(1, 6, 3)
 
